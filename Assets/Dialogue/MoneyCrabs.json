@@ -1,0 +1,58 @@
+[
+  {
+    "id": "Money Open",
+    "body": [
+		"I started from nothing to get where I am, Herm."
+		"I was once using an old boot as my shell, but I still managed to make it all the way to the top!"
+		"And I may be the richest crab in the neighbourhood, but I have a secret.",
+		"With my money I can buy whatever I want - the newest gadgets, fancy cars, even lobsters will respect this kind of money!"
+		"But do you know what money can't buy, Herm? I'll tell you.",
+		"There's nothing I can buy that will rid me of this boredom. It's boring being at the top!",
+		"I want to live the thrills of wheeling and dealing once again.",
+		"If I could reinvent myself, turn a new shell, and have another shot at making it big.",
+		"That's what money can't buy, Herm."
+    ],
+    "options": [
+      "Money Celebrity",
+	  "Money Business",
+      "Money Goodbye"
+    ]
+  },
+    {
+	"id": "Money Celebrity",
+	"pre": {
+      "global_flag_set": ["HasCelebrityShell"],
+	  },
+	"option_text": "Would this shell allow you a new start?",
+	"body": [
+		"It's perfect for my needs!",
+		"Maybe not the old boot I once began in, but something that'll allow me to setup a new life (with all my old ammenities!).",
+		"I can't wait to start this new business opportunity!"
+		],
+	"post": {
+			"unset_global_flags": ["HasCelebrityShell",],
+	 "set_global_flags": ["RollCredits","HasMoneyShell"],
+	}
+  },
+  {
+    "id": "Money Business",
+	 "pre": {
+      "global_flag_set": ["HasBusinessShell"],
+	  },
+	"option_text": "What do you think of this office shell?",
+	"body": [
+			"I like your thinking Herm! There's a business-crab under that shell of yours, isn't there?",
+			"With this shell, I'll be creating the next big brand in no time!"
+			],
+	"post": {
+		"unset_global_flags": ["HasBusinessShell"],
+		"set_global_flags": ["HasMoneyShell"],
+		"set_global_flags": ["RollCredits"],
+	}
+  },
+  {
+	"id": "Money Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Time is money, Herm!"
+  }
+]

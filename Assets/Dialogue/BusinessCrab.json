@@ -1,0 +1,61 @@
+[
+  {
+    "id": "Clawrice Open",
+    "body": [
+		"Hermie! My main crab, the Hermster!",
+		"Got a shell to swap? You know I'm always looking for a good deal.",
+		"But what I really want is a great deal!",
+		"My last great deal, took place in the crab shack, that great little bistro downtown.",
+		"I was staring down three lobsters - they were driving a hard bargain as always.",
+		"I wanted a shipment of pincer ",
+		"If only only there was a shell that could allow for my kids to continue golfing..."
+		"lobster mobsters, needs to launder money (a second business that acts as a front), can do that with a restaurant or another market stall" 
+    ],
+    "options": [
+      "Clawrice Ranch",
+	  "Clawrice Business",
+      "Clawrice Goodbye"
+    ]
+  },
+    {
+	"id": "Clawrice Business",
+	"pre": {
+      "global_flag_set": ["HasBusinessShell"],
+	  },
+	"option_text": "How about this office block?",
+	"body": [
+		"An office block?! - No doubt full of busy workers!",
+		"With this, there will be plenty of money to embezzle.",
+		"This will definitely offset the cost of golf lessons!",
+		"My kids are gonna think I'm the best Dad in the world.",
+		"I always knew I was a good crab. Thanks Herm!"
+		],
+	"post": {
+			"unset_global_flags": ["HasBusinessShell"],
+		"set_global_flags": ["HasFamilyShell"],
+	 "set_global_flags": ["RollCredits"],
+	}
+  },
+  {
+    "id": "Clawrice Ranch",
+	 "pre": {
+      "global_flag_set": ["HasRanchShell"],
+	  },
+	"option_text": "How about this nice big ranch?",
+	"body": ["Wow, that looks perfect! Plenty of space for the kids to play golf whenever I want!",
+			"They'll never need a lesson again!",
+			"And look, it's full of salad dressing - tasty!",
+			"Golf on the ranch, ranch on the dressing. What more could a Dad want?"
+			],
+	"post": {
+				"unset_global_flags": ["HasRanchShell"],
+		"set_global_flags": ["HasFamilyShell"],
+	 "set_global_flags": ["RollCredits"],
+	}
+  },
+  {
+	"id": "Clawrice Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Have one shell of a time!"
+  }
+]

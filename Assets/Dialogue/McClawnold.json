@@ -1,0 +1,39 @@
+[
+  {
+    "id": "McClaw Open",
+    "body": [
+		"Howdy Herm!",
+		"Oh I remember when you were just a wee zoea.",
+		"Such a long time ago, and it feels it! Y'know my pincers ain't as sharp as they used to be.",
+		"I've been running the ranch for an awful while now, but it seems it's just too much of a claw-ful for an old-timer like myself.",
+		"But I'll soldier on. I've seen this place through worse!",
+		"Like my late wife used to say, once you've made it through an algae bloom you can make it through anything."
+    ],
+    "options": [
+      "McClaw Market",
+      "McClaw Goodbye"
+    ]
+  },
+    {
+	"id": "McClaw Market",
+	"pre": {
+      "global_flag_set": ["HasMarketShell"],
+	  },
+	"option_text": "Want to swap for my market stall shell?",
+	"body": [
+		"Hmph. A market stall? - Selling my produce was never my strong suit.",
+		"But maybe this old crab can learn some new tricks.",
+		"You take good care of my ranch.",
+		"Treat her well, and she'll return the favour."
+		],
+	"post": {
+	  "unset_global_flags": ["HasMarketShell"],
+	  "set_global_flags": ["HasRanchShell"]
+	}
+  },
+  {
+	"id": "McClaw Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Take it easy, tike."
+  }
+]

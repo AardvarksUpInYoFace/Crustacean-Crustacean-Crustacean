@@ -1,0 +1,71 @@
+[
+  {
+    "id": "Prince Open",
+    "body": [
+		"Yes.",
+		"It is I",
+		"Prince Pincent.",
+		"(The 3rd).",
+		"Here is a present: ",
+		"My presence.",
+		"You are most welcome my loyal subject",
+		"But listen.",
+		"I have a most troublesome predicament.",
+		"The common folk.",
+		"They're obsessed.",
+		"Royal baby this.",
+		"Royal wedding that.",
+		"The limelight is truly turning me green.",
+		"I'm green wih envy.",
+		"Of your simple peasent lifestyle.",
+		"I need what you have.",
+		"Something boring.",
+		"Unspecial.",
+		"Unimportant.",
+		"Good day!"
+    ],
+    "options": [
+      "Prince Celebrity",
+	  "Prince Aristocrab",
+      "Prince Goodbye"
+    ]
+  },
+    {
+	"id": "Prince Celebrity",
+	"pre": {
+      "global_flag_set": ["HasCelebrityShell"],
+	  },
+	"option_text": "What do you think of this very terrible shell?",
+	"body": [
+		"Dingy,",
+		"Disgusting.",
+		"Small.",
+		"This will have to do."
+		],
+	"post": {
+			"unset_global_flags": ["HasCelebrityShell"],
+	 "set_global_flags": ["RollCredits","HasPrinceShell"],
+	}
+  },
+  {
+    "id": "Prince Aristocrab",
+	 "pre": {
+      "global_flag_set": ["HasAristocrabShell"],
+	  },
+	"option_text": "Does this suit your needs?",
+	"body": [
+			"How quant.",
+			"You can leave now."
+			],
+	"post": {
+			"unset_global_flags": ["HasAristocrabShell"],
+		"set_global_flags": ["HasPrinceShell"],
+	 "set_global_flags": ["RollCredits"],
+	}
+  },
+  {
+	"id": "Prince Goodbye",
+	"option_text": "Goodbye!",
+	"body": "I said good day!"
+  }
+]
