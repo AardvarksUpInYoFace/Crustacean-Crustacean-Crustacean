@@ -1,0 +1,24 @@
+[
+  {
+    "id": "Conversation Object",
+    "pre": {
+      "or": {
+        "global_flag_set": "FLAG1",
+        "coversation_flag_not_set": "FLAG2"
+      },
+      "conversation_flag_set": "FLAG3"
+    },
+    "body": [
+      "Words go here",
+      "This is a second page of text"
+    ],
+    "options": [
+      "Another Coversation Object",
+      "A Third Coversation Object"
+    ],
+    "post": {
+      "set_global_flags": ["FLAG4"],
+      "set_conversation_flags": ["FLAG5"]
+    }
+  }
+]
