@@ -2,23 +2,32 @@
   {
     "id": "Conversation Object",
     "pre": {
-      "or": {
-        "global_flag_set": "FLAG1",
-        "coversation_flag_not_set": "FLAG2"
-      },
-      "conversation_flag_set": "FLAG3"
+      "global_flag_set": ["FLAG1"],
+      "global_flag_not_set": ["FLAG2"],
+      "conversation_flag_set": ["FLAG3"],
+      "conversation_flag_not_set": ["FLAG4"]
     },
     "body": [
       "Words go here",
       "This is a second page of text"
     ],
     "options": [
-      "Another Coversation Object",
-      "A Third Coversation Object"
+      "Another Conversation Object",
+      "A Third Conversation Object"
     ],
     "post": {
-      "set_global_flags": ["FLAG4"],
-      "set_conversation_flags": ["FLAG5"]
+      "set_global_flags": ["FLAG5"],
+      "set_conversation_flags": ["FLAG6"]
     }
+  },
+  {
+    "id": "Another Conversation Object",
+	"option_text": "Blah?",
+	"body": "Blah blah blah!"
+  },
+  {
+	"id": "A Third Conversation Object",
+	"option_text": "Goodbye!",
+	"body": "Have a shell of a time!"
   }
 ]

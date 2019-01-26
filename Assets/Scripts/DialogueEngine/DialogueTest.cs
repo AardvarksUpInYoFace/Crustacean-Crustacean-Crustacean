@@ -12,7 +12,7 @@ namespace Assets.Scripts.DialogueEngine {
 		TextAsset json;
 
 		private void Start() {
-			ConversationParser.Parse(json.text);
+			new ConversationParser().Parse(json.text);
 		}
 	}
 }
