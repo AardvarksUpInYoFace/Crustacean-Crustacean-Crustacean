@@ -8,6 +8,7 @@ namespace Crustacean.Dialogue {
 
 	public abstract class DialogueElement {
 		protected string id;
+		protected bool entrypoint;
 		protected string optionText;
 		protected DialoguePrecondition pre;
 		protected string[] body;
