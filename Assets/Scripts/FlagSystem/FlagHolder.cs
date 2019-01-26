@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Crustacean.FlagSystem {
 	public abstract class FlagHolder {
 		private Dictionary<string, bool> flags = new Dictionary<string, bool>();
+		public Action<string, bool> OnFlagChange;
 
 		public bool IsSet(string flag) {
 			return flags.ContainsKey(flag) && flags[flag];
@@ -18,6 +19,7 @@ namespace Crustacean.FlagSystem {
 			} else {
 				flags.Add(flag, true);
 			}
+			OnFlagChange(flag, true);
 		}
 
 		public void Unset(string flag) {
@@ -26,6 +28,7 @@ namespace Crustacean.FlagSystem {
 			} else {
 				flags.Add(flag, false);
 			}
+			OnFlagChange(flag, false);
 		}
 	}
 }

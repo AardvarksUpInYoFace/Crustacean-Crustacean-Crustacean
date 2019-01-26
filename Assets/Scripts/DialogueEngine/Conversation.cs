@@ -14,7 +14,7 @@ namespace Crustacean.Dialogue {
 		public void EnterConversation() {
 			List<DialogueElement> entrypoints = new List<DialogueElement>();
 			foreach(DialogueElement d in dialogueElements.Values) {
-				if(d.isEntrypoint() && assessPreconditions(d.getId())) {
+				if(d.isEntrypoint() && AssessPreconditions(d.getId())) {
 					entrypoints.Add(d);
 				}
 			}
@@ -22,11 +22,11 @@ namespace Crustacean.Dialogue {
 			if(entrypoints.Count > 1) throw new Exception("Multiple valid entrpoints found!");
 		}
 
-		private bool assessPreconditions(string id) {
+		private bool AssessPreconditions(string id) {
 			bool pass = true;
 			foreach(KeyValuePair<PreconditionOperators, string[]> set in dialogueElements[id].getPrecondition().GetPreconditions()) {
-				foreach(string flag in set.Value) {
-					if(!set.Key.Assess(flag, this)) {
+				foreach(string operand in set.Value) {
+					if(!set.Key.Assess(operand, this)) {
 						pass = false;
 						break;
 					}
@@ -34,6 +34,14 @@ namespace Crustacean.Dialogue {
 				if(!pass) break;
 			}
 			return pass;
+		}
+
+		private void RunPostconditions(string id) {
+			foreach(KeyValuePair<PostconditionOperators, string[]> set in dialogueElements[id].getPostcondition().GetPostconditions()) {
+				foreach(string operand in set.Value) {
+					set.Key.Update(operand, this);
+				}
+			}
 		}
 	}
 }
