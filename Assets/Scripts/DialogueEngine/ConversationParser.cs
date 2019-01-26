@@ -31,7 +31,6 @@ namespace Crustacean.Dialogue {
 					}
 				}
 				throw new JsonReaderException("Unexpected EOF when parsing file");
-				ParseDialogueElement(reader);
 			} else if(reader.TokenType == JsonToken.StartObject) {
 				ParseDialogueElement(reader);
 				ResolveDialogueElements();
@@ -47,6 +46,7 @@ namespace Crustacean.Dialogue {
 
 		private string ParseDialogueElement(JsonTextReader reader) {
 			string id = null, optionText = null;
+			bool entrypoint = false;
 			DialoguePrecondition pre = null;
 			ICollection<string> options = null, body = null;
 			DialoguePostcondition post = null;
@@ -68,6 +68,13 @@ namespace Crustacean.Dialogue {
 						case "option_text":
 							if(reader.TokenType == JsonToken.String) {
 								optionText = (string) reader.Value;
+							} else {
+								throw new JsonReaderException("Unexpected element when parsing dialogue element option text: " + reader.TokenType);
+							}
+							break;
+						case "entrypoint":
+							if(reader.TokenType == JsonToken.Boolean) {
+								entrypoint = (bool) reader.Value;
 							} else {
 								throw new JsonReaderException("Unexpected element when parsing dialogue element option text: " + reader.TokenType);
 							}
@@ -124,6 +131,7 @@ namespace Crustacean.Dialogue {
 						id, 
 						new UnresolvedDialogueElement(
 							id, 
+							entrypoint,
 							optionText,
 							pre, 
 							body.ToArray(), 
@@ -232,8 +240,9 @@ namespace Crustacean.Dialogue {
 		private class UnresolvedDialogueElement : DialogueElement {
 			private string[] unresolvedOptions;
 
-			public UnresolvedDialogueElement(string id, string optionText, DialoguePrecondition pre, string[] body, string[] unresolvedOptions, DialoguePostcondition post) {
+			public UnresolvedDialogueElement(string id, bool entrypoint, string optionText, DialoguePrecondition pre, string[] body, string[] unresolvedOptions, DialoguePostcondition post) {
 				this.id = id;
+				this.entrypoint = entrypoint;
 				this.optionText = optionText;
 				this.pre = pre;
 				this.body = body;
