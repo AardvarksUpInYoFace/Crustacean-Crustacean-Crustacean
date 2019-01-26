@@ -11,20 +11,35 @@ namespace Crustacean.Dialogue {
 			this.dialogueElements = dialogueElements;
 		}
 
-		public void EnterConversation() {
+		public ConversationTransaction EnterConversation() {
 			List<DialogueElement> entrypoints = new List<DialogueElement>();
 			foreach(DialogueElement d in dialogueElements.Values) {
-				if(d.isEntrypoint() && AssessPreconditions(d.getId())) {
+				if(d.isEntrypoint() && AssessPreconditions(d)) {
 					entrypoints.Add(d);
 				}
 			}
 			if(entrypoints.Count == 0) throw new Exception("No valid entrypoints found!");
 			if(entrypoints.Count > 1) throw new Exception("Multiple valid entrpoints found!");
+			return GetNext(entrypoints[0].getId());
 		}
 
-		private bool AssessPreconditions(string id) {
+		public ConversationTransaction GetNext(string id) {
+			DialogueElement d = dialogueElements[id];
+			Dictionary<string, string> idOptionLabelPairs = new Dictionary<string, string>();
+			foreach(DialogueElement option in d.getOptions()) {
+				if(AssessPreconditions(option)) {
+					idOptionLabelPairs.Add(option.getId(), option.getOptionText());
+				}
+			}
+			if(idOptionLabelPairs.Count == 0) idOptionLabelPairs = null;
+			RunPostconditions(d);
+			return new ConversationTransaction(d.getBody(), idOptionLabelPairs);
+		}
+
+		private bool AssessPreconditions(DialogueElement d) {
 			bool pass = true;
-			foreach(KeyValuePair<PreconditionOperators, string[]> set in dialogueElements[id].getPrecondition().GetPreconditions()) {
+			if(d.getPrecondition() == null) return true;
+			foreach(KeyValuePair<PreconditionOperators, string[]> set in d.getPrecondition().GetPreconditions()) {
 				foreach(string operand in set.Value) {
 					if(!set.Key.Assess(operand, this)) {
 						pass = false;
@@ -36,8 +51,9 @@ namespace Crustacean.Dialogue {
 			return pass;
 		}
 
-		private void RunPostconditions(string id) {
-			foreach(KeyValuePair<PostconditionOperators, string[]> set in dialogueElements[id].getPostcondition().GetPostconditions()) {
+		private void RunPostconditions(DialogueElement d) {
+			if(d.getPostcondition() == null) return;
+			foreach(KeyValuePair<PostconditionOperators, string[]> set in d.getPostcondition().GetPostconditions()) {
 				foreach(string operand in set.Value) {
 					set.Key.Update(operand, this);
 				}
