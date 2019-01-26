@@ -11,5 +11,9 @@ namespace Crustacean.Dialogue {
 		public DialoguePostcondition(Dictionary<PostconditionOperators, string[]> postconditions) {
 			this.postconditions = postconditions;
 		}
+
+		public Dictionary<PostconditionOperators, string[]> GetPostconditions() {
+			return postconditions;
+		}
 	}
 }

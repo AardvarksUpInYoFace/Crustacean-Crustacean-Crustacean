@@ -16,6 +16,7 @@ namespace Crustacean.Dialogue {
 		protected DialoguePostcondition post;
 
 		public string getId() { return id; }
+		public bool isEntrypoint() { return entrypoint; }
 		public string getOptionText() { return optionText; }
 		public DialoguePrecondition getPrecondition() { return pre; }
 		public string[] getBody() { return body; }

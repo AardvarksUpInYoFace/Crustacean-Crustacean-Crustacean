@@ -11,5 +11,9 @@ namespace Crustacean.Dialogue {
 		public DialoguePrecondition(Dictionary<PreconditionOperators, string[]> preconditions) {
 			this.preconditions = preconditions;
 		}
+
+		public Dictionary<PreconditionOperators, string[]> GetPreconditions() {
+			return preconditions;
+		}
 	}
 }
