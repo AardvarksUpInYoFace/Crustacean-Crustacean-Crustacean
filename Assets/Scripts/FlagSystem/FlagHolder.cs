@@ -19,7 +19,7 @@ namespace Crustacean.FlagSystem {
 			} else {
 				flags.Add(flag, true);
 			}
-			OnFlagChange(flag, true);
+			if(OnFlagChange != null) OnFlagChange(flag, true);
 		}
 
 		public void Unset(string flag) {
@@ -28,7 +28,7 @@ namespace Crustacean.FlagSystem {
 			} else {
 				flags.Add(flag, false);
 			}
-			OnFlagChange(flag, false);
+			if(OnFlagChange != null) OnFlagChange(flag, false);
 		}
 	}
 }
