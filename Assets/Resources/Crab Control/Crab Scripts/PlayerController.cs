@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody Rb;
 
+    public Animator myAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         Rb = GetComponent<Rigidbody>();
+        myAnimator.Play("Crab_Idle_Real");
     }
 
     // Update is called once per frame
@@ -25,6 +28,13 @@ public class PlayerController : MonoBehaviour
         {
             Movement();
         }
+        
+        else
+        {
+            Rb.velocity = Vector3.zero;
+            if(!myAnimator.GetBool("IsIdle")) myAnimator.CrossFadeInFixedTime("Crab_Idle_Real", 0.2f);
+        }
+        
     }
 
     private void Movement()
@@ -45,6 +55,9 @@ public class PlayerController : MonoBehaviour
         //GetComponent<Rigid.localPosition += new Vector3(CrabSpeed * diagonalOperator * side, 0, CrabSpeed * diagonalOperator * forward);
 
         Rb.velocity = new Vector3(CrabSpeed * diagonalOperator * side, 0, CrabSpeed * diagonalOperator * forward);
+
+        if((Mathf.Abs(forward) + Mathf.Abs(side) == 0) && !myAnimator.GetBool("IsIdle")) myAnimator.CrossFadeInFixedTime("Crab_Idle_Real", 0.2f);
+        if(Mathf.Abs(forward) + Mathf.Abs(side) != 0 && myAnimator.GetBool("IsIdle")) myAnimator.CrossFadeInFixedTime("Crab_Idle", 0.2f);
     }
 
     private int CheckInputHeld(KeyCode[] keycodes)
