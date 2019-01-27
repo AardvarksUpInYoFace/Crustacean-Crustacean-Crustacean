@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         //GetComponent<Rigid.localPosition += new Vector3(CrabSpeed * diagonalOperator * side, 0, CrabSpeed * diagonalOperator * forward);
 
-        Rb.velocity = new Vector3(CrabSpeed * diagonalOperator * side, 0, CrabSpeed * diagonalOperator * forward);
+        Rb.velocity = new Vector3(CrabSpeed * diagonalOperator * side, Rb.velocity.y, CrabSpeed * diagonalOperator * forward);
 
         if((Mathf.Abs(forward) + Mathf.Abs(side) == 0) && !myAnimator.GetBool("IsIdle")) myAnimator.CrossFadeInFixedTime("Crab_Idle_Real", 0.2f);
         if(Mathf.Abs(forward) + Mathf.Abs(side) != 0 && myAnimator.GetBool("IsIdle")) myAnimator.CrossFadeInFixedTime("Crab_Idle", 0.2f);

@@ -1,5 +1,6 @@
 [
   {
+  	"entrypoint": true,
     "id": "Prince Open",
     "body": [
 		"Yes.",
@@ -59,8 +60,7 @@
 			],
 	"post": {
 			"unset_global_flags": ["HasAristocrabShell"],
-		"set_global_flags": ["HasPrinceShell"],
-	 "set_global_flags": ["RollCredits"],
+		"set_global_flags": ["HasPrinceShell","RollCredits"],
 	}
   },
   {
