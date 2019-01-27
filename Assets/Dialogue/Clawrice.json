@@ -40,10 +40,10 @@
       "global_flag_set": ["HasRanchShell"],
 	  },
 	"option_text": "How about this nice big ranch?",
-	"body": ["Wow, that looks perfect! Plenty of space for the kids to play golf whenever I want!",
+	"body": ["Wow, that ranch looks perfect! Plenty of space for the kids to play golf whenever I want them to!",
 			"They'll never need a lesson again!",
 			"And look, it's full of salad dressing - tasty!",
-			"Golf on the ranch, ranch on the dressing. What more could a Dad want?"
+			"Golf on the ranch, ranch on the salad. What more could a Dad want?"
 			],
 	"post": {
 				"unset_global_flags": ["HasRanchShell"],

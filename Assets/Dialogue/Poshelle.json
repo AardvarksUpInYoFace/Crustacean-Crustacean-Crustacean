@@ -1,0 +1,52 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Poshelle Open",
+    "body": [
+		"Oh Herm! It's so good to see you darling!",
+		"Fame... Stardom... They're so...",
+		"Well, there's only so many selfies I can post before something has to give!",
+		"I need culture Herm! Something substantial, something real!",
+		"Good food, good art, this is what a modern crab needs. Without them, life is...",
+		"You know what I'm trying to say, don't you?"
+    ],
+    "options": [
+      "Poshelle Chef",
+      "Poshelle Art",
+	  "Poshelle Goodbye"
+  },
+    {
+	"id": "Poshelle Chef",
+	"pre": {
+      "global_flag_set": ["HasChefShell"],
+	  },
+	"option_text": "Want to swap for my small restaurant?",
+	"body": [
+		"Most savoury! Thank you Herm, darling!",
+		"This'll be sure to give me a renewed sense of purpose!"
+		],
+	"post": {
+	  "unset_global_flags": ["HasChefShell"],
+	  "set_global_flags": ["HasCelebrityShell"]
+	}
+  },
+ {
+	"id": "Poshelle Art",
+	"pre": {
+      "global_flag_set": ["HasArtShell"],
+	  },
+	"option_text": "This shell looks pretty artsy..?",
+	"body": [
+		"Oh, how refined! You simply must let me have it!",
+		"This'll be sure to give me a renewed sense of purpose!"
+		],
+	"post": {
+	  "unset_global_flags": ["HasArtShell"],
+	  "set_global_flags": ["HasCelebrityShell"]
+	}
+ {
+	"id": "Poshelle Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Ta-ra, darling!"
+  }
+]

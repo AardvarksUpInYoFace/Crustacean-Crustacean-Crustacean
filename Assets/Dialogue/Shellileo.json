@@ -1,0 +1,41 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "AstroCrab Open",
+    "body": [
+		"Ahh, ah, ah ha!",
+		"Oh, didn't see you there young one!",
+		"What's wrong? Oh, you see, ever since I moved into this jar, I've been able to see the stars.",
+		"By observing their movements, I now know more about how the world works.",
+		"Too much, in fact! I haven't slept a wink since I moved in!",
+		"Hey, I heard you were looking to move up the property ladder.",
+		"Surely anything's an upgrade on that old tin can of yours.",
+		"Why don't you do me a trade. Take this old thing off my hands so I can sleep.",
+		"What do you say?" 
+    ],
+    "options": [
+      "AstroCrab Accept",
+      "AstroCrab Goodbye"
+    ]
+  },
+    {
+	"id": "AstroCrab Accept",
+	"pre": {
+      "global_flag_set": ["HasStarterShell"],
+	  },
+	"option_text": "Sure thing..?",
+	"body": [
+		"Ah, good good. Thank you, thank you.",
+		"Of you go now young one, this old crab's exhausted."
+		],
+	"post": {
+			"unset_global_flags": ["HasStarterShell"],
+		"set_global_flags": ["HasAstroShell"],
+	}
+  },
+  {
+	"id": "AstroCrab Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Oh, not interested? No bother, no bother..."
+  }
+]

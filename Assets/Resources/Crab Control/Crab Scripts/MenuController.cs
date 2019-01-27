@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using Crustacean.FlagSystem;
 
 public class MenuController : MonoBehaviour
 {
 
     private List<Image> MenuImages = new List<Image>();
     private List<Text> MenuTexts = new List<Text>();
+
+	[SerializeField]
+	private Image family, fame, fortune;
 
     public Button StartButton;
 
@@ -17,7 +21,8 @@ public class MenuController : MonoBehaviour
     {
         MenuImages = GetComponentsInChildren<Image>().ToList();
         MenuTexts = GetComponentsInChildren<Text>().ToList();
-    }
+		GlobalFlags.instance.OnFlagChange += CheckEnding;
+	}
 
     // Update is called once per frame
     void Update()
@@ -34,8 +39,30 @@ public class MenuController : MonoBehaviour
         StartCoroutine(FadeWholeMenu(0, 1.3f, 1, 0));
     }
 
+	void CheckEnding(string flag, bool value) {
+		if(flag == "RollCredits") {
+			if(GlobalFlags.instance.IsSet("HasFamilyShell")) {
+				ShowCard(family);
+			} else if(GlobalFlags.instance.IsSet("HasMoneyShell")) {
+				ShowCard(fortune);
+			} else if(GlobalFlags.instance.IsSet("HasPrinceShell")) {
+				ShowCard(fame);
+			}
+		} else if(flag == "HasFamilyShell" && GlobalFlags.instance.IsSet("RollCredits")) {
+			ShowCard(family);
+		} else if(flag == "HasMoneyShell" && GlobalFlags.instance.IsSet("RollCredits")) {
+			ShowCard(fortune);
+		} else if(flag == "HasPrinceShell" && GlobalFlags.instance.IsSet("RollCredits")) {
+			ShowCard(fame);
+		}
+	}
 
-    private IEnumerator FadeWholeMenu(float iterator, float time, float start, float end)
+	private void ShowCard(Image img) {
+		img.gameObject.SetActive(true);
+		img.color = Color.white;
+	}
+
+	private IEnumerator FadeWholeMenu(float iterator, float time, float start, float end)
     {
         yield return new WaitForSeconds(Time.deltaTime);
 

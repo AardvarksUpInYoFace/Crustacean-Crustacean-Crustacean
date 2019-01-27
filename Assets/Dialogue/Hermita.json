@@ -1,0 +1,37 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Hermita Open",
+    "body": [
+		"Ooh hello Herm dearie.",
+		"What's that? You're looking to climb up the property ladder?",
+		"You know, I can help you out.",
+		"A young, strapping crab like you needs somewhere nicer to live."
+    ],
+    "options": [
+      "Hermita Starter",
+	  "Hermita Goodbye",
+  },
+    {
+	"id": "Hermita Starter",
+	"pre": {
+      "global_flag_set": ["HasStarterShell"],
+	  },
+	"option_text": "Are you sure?",
+	"body": [
+		"Of course! Don't worry about me!",
+		"To be honest I'm looking for an excuse,",
+		"my grandaughter has been asking me to say with her for a while now."
+		],
+	"post": {
+	  "unset_global_flags": ["HasStarterShell"],
+	  "set_global_flags": ["HasGardenerShell"]
+	}
+  },
+   },
+ {
+	"id": "Hermita Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Ooh, what a lovely young crab you are!"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Crusty Open",
+    "body": [
+		"Hey there Herm, you're looking chirpy today.",
+		"I wish I could say the same, but I've been exhausted this whole week.",
+		"Getting up early every morning to bake, it really take it of you.",
+		"I need somewhere quiet where I can sleep for a long time."
+    ],
+    "options": [
+      "Crusty Starter",
+	  "Crusty Goodbye",
+  },
+    {
+	"id": "Crusty Starter",
+	"pre": {
+      "global_flag_set": ["HasStarterShell"],
+	  },
+	"option_text": "You can use my place!",
+	"body": [
+		"Are you sure? That would be pretty neat!",
+		"Thanks, I'm gonna try catch some Zs.."
+		],
+	"post": {
+	  "unset_global_flags": ["HasStarterShell"],
+	  "set_global_flags": ["HasBakerShell"]
+	}
+  },
+   },
+ {
+	"id": "Crusty Goodbye",
+	"option_text": "Goodbye!",
+	"body": "I'm doing everything I can to stay awake!"
+  }
+]

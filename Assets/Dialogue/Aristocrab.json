@@ -1,0 +1,35 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Aristocrab Open",
+    "body": [
+		"Oh. It's you.",
+		"When one is as ritzy as I am, little in life can hold one's attention for long...",
+		"Want to impress me? You must be bold. You must be colourful!",
+		"Or of high pedigree. Obviously."
+    ],
+    "options": [
+      "Aristocrab Art",
+	  "Aristocrab Goodbye"
+  },
+    {
+	"id": "Aristocrab Art",
+	"pre": {
+      "global_flag_set": ["HasArtShell"],
+	  },
+	"option_text": "Is this colourful enough for you?",
+	"body": [
+		"Oh my! To think one such as you could happen across something so... So... Divine.",
+		"It must be mine! How much, you ask? My shell? Well... If you insist."
+		],
+	"post": {
+	  "unset_global_flags": ["HasArtShell"],
+	  "set_global_flags": ["HasAristocrabShell"]
+	}
+  },
+ {
+	"id": "Aristocrab Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Hmph."
+  }
+]

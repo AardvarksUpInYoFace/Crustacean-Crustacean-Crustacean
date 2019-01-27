@@ -1,0 +1,52 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Da Pinci Open",
+    "body": [
+		"What's a crab to do?",
+		"Life as an artist isn't all it's cracked up to be, Herm.",
+		"I woke up this morning and I couldn't paint! No inspiration, no nothing!",
+		"I need to see something new. Maybe that'll help me get out of this block..."
+    ],
+    "options": [
+      "Da Pinci Backpacker",
+	  "Da Pinci Astro",
+	  "Da Pinci Goodbye"
+  },
+    {
+	"id": "Da Pinci Backpacker",
+	"pre": {
+      "global_flag_set": ["HasBackpackerShell"],
+	  },
+	"option_text": "How about some world travel?",
+	"body": [
+		"You know, it's always been my dream to travel the world and see all that it has to offer!",
+		"Maybe this will be the push I need to get the creative juices flowing again."
+		],
+	"post": {
+	  "unset_global_flags": ["HasBackpackerShell"],
+	  "set_global_flags": ["HasArtShell"]
+	}
+  },
+   },
+    {
+	"id": "Da Pinci Astro",
+	"pre": {
+      "global_flag_set": ["HasAstroShell"],
+	  },
+	"option_text": "Would seeing the stars help your creative problems?",
+	"body": [
+		"I'm sure it would, but I don't see how a glass jar is going to help me do that!",
+		"Hmm... I guess I'll give it a go all the same. Nothing ventured, nothing gained..."
+		],
+	"post": {
+	  "unset_global_flags": ["HasAstroShell"],
+	  "set_global_flags": ["HasArtShell"]
+	}
+  },
+ {
+	"id": "Da Pinci Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Have a good day."
+  }
+]

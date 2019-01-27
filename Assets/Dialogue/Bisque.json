@@ -1,0 +1,52 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "Bisque Open",
+    "body": [
+		"Ah, bonjour!",
+		"So you 'ave come to sample my family's famed cuisine? Well, sorry to disappoint, but we are closed.",
+		"I simply cannot cook any longer! I am sick of eet!",
+		"We 'aven't changed our menu for decades... I need something new. Something fresh!"
+    ],
+    "options": [
+      "Bisque Bakery",
+	  "Bisque Backpacker",
+	  "Bisque Goodbye"
+  },
+    {
+	"id": "Bisque Bakery",
+	"pre": {
+      "global_flag_set": ["HasBakerShell"],
+	  },
+	"option_text": "Interested in doing some baking?",
+	"body": [
+		"Hmm... It ees not what I 'ad in mind, but you have piqued my interest.",
+		"'ere, take my restaurant. I simply cannot look at eet any longer."
+		],
+	"post": {
+	  "unset_global_flags": ["HasBakerShell"],
+	  "set_global_flags": ["HasChefShell"]
+	}
+  },
+   },
+    {
+	"id": "Bisque Backpacker",
+	"pre": {
+      "global_flag_set": ["HasBackpackerShell"],
+	  },
+	"option_text": "Maybe sampling some foreign cuisines will bring the spark back?",
+	"body": [
+		"Ahh! A backpack! With this I can travel and taste the many wonders of the ocean!",
+		"'ere, look after my restaurant. I shall be back! And so shall, perhaps, my passion for cooking!"
+		],
+	"post": {
+	  "unset_global_flags": ["HasBackpackerShell"],
+	  "set_global_flags": ["HasChefShell"]
+	}
+  },
+ {
+	"id": "Bisque Goodbye",
+	"option_text": "Goodbye!",
+	"body": "Au revoir, mon ami."
+  }
+]

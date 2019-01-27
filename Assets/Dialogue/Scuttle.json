@@ -1,0 +1,40 @@
+[
+  {
+  	"entrypoint": true,
+    "id": "BackpackCrab Open",
+    "body": [
+		"Oh, hey there Herm.",
+		"Keepin' chill, yeah?",
+		"Yeah, just got back from my round-the-world trip.",
+		"Think I'm gonna take a break from the travelling lifestyle.",
+		"Hey, weren't you trying to get onto the property ladder?",
+		"Finally trading in the old bean can then, eh?",
+		"Tell you what, I'll let you have my old travelling shell if you want.",
+		"That chill?" 
+    ],
+    "options": [
+      "BackpackCrab Accept",
+      "BackpackCrab Goodbye"
+    ]
+  },
+    {
+	"id": "BackpackCrab Accept",
+	"pre": {
+      "global_flag_set": ["HasStarterShell"],
+	  },
+	"option_text": "Sounds good!",
+	"body": [
+		"Radical, radical.",
+		"Take it easy, yeah?"
+		],
+	"post": {
+			"unset_global_flags": ["HasStarterShell"],
+		"set_global_flags": ["HasBackpackerShell"],
+	}
+  },
+  {
+	"id": "BackpackCrab Goodbye",
+	"option_text": "Goodbye!",
+	"body": "No worries, no worries. Peace friend."
+  }
+]

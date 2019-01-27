@@ -5,12 +5,12 @@
     "body": [
 		"Hermie! My main crab, the Hermster!",
 		"Got a shell to swap? You know I'm always looking for a good deal.",
-		"But right now I'm really stuck been a rock and a hard place.",
-		"These lobster mobsters",
+		"But right now I'm really stuck between a rock and a hard place.",
+		"These lobster mobsters...",
 		"I was staring down three lobsters - they were driving a hard bargain as always.",
-		"I wanted a shipment of pincer ",
-		"If only only there was a shell that could allow for my kids to continue golfing..."
-		"lobster mobsters, needs to launder money (a second business that acts as a front), can do that with a restaurant or another market stall" 
+		"I wanted a shipment of pincer oil you see.",
+		"They said they could get me some of the good stuff, as long as I helped with their money laundering schemes.",
+		"But I don't want my own business associated, any chance you could find me a small business to uh... help me out?" 
     ],
     "options": [
       "BusinessCrab MarketStall",
@@ -23,18 +23,15 @@
 	"pre": {
       "global_flag_set": ["HasMarketShell"],
 	  },
-	"option_text": "How about this office block?",
+	"option_text": "How about this small market stall?",
 	"body": [
-		"An office block?! - No doubt full of busy workers!",
-		"With this, there will be plenty of money to embezzle.",
-		"This will definitely offset the cost of golf lessons!",
-		"My kids are gonna think I'm the best Dad in the world.",
-		"I always knew I was a good crab. Thanks Herm!"
+		"Lookin' good Herm, lookin' good!",
+		"I'll be able to cook the books with this business for sure.",
+		"Thanks!"
 		],
 	"post": {
 			"unset_global_flags": ["HasMarketShell"],
 		"set_global_flags": ["HasBusinessShell"],
-	 "set_global_flags": ["RollCredits"],
 	}
   },
   {
@@ -42,21 +39,18 @@
 	 "pre": {
       "global_flag_set": ["HasChefShell"],
 	  },
-	"option_text": "How about this nice big ranch?",
-	"body": ["Wow, that looks perfect! Plenty of space for the kids to play golf whenever I want!",
-			"They'll never need a lesson again!",
-			"And look, it's full of salad dressing - tasty!",
-			"Golf on the ranch, ranch on the dressing. What more could a Dad want?"
+	"option_text": "How about this small restaurant?",
+	"body": ["Not exactly what I was expecting but this'll do.",
+			"At least I won't go hungry!"
 			],
 	"post": {
 				"unset_global_flags": ["HasChefShell"],
 		"set_global_flags": ["HasBusinessShell"],
-	 "set_global_flags": ["RollCredits"],
 	}
   },
   {
 	"id": "BusinessCrab Goodbye",
 	"option_text": "Goodbye!",
-	"body": "Have one shell of a time!"
+	"body": "Stay safe and pay ya taxes!"
   }
 ]
