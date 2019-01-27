@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CrabSpeed: 2
+  myAnimator: {fileID: 0}
 --- !u!1001 &421317393772267247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,7 +24,7 @@ PrefabInstance:
     - target: {fileID: 1493856451152490979, guid: 8efde7f15ae63194d910cddd8a387309,
         type: 3}
       propertyPath: m_Name
-      value: Player Crab
+      value: Player Crab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7776284317037687986, guid: 8efde7f15ae63194d910cddd8a387309,
         type: 3}

@@ -26,7 +26,7 @@ using Assets.Scripts.DialogueEngine;
 
         //set  all the global shell flags in this start script.
         
-        GlobalFlags.instance.Set("HasBusinessShell");
+        GlobalFlags.instance.Unset("HasBusinessShell");
         GlobalFlags.instance.Unset("HasCelebrityShell");
         GlobalFlags.instance.Unset("HasMoneyShell");
         GlobalFlags.instance.Unset("HasMarketShell");
