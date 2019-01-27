@@ -26,12 +26,13 @@ namespace Crustacean.Dialogue {
 		public ConversationTransaction GetNext(string id) {
 			DialogueElement d = dialogueElements[id];
 			Dictionary<string, string> idOptionLabelPairs = new Dictionary<string, string>();
-			foreach(DialogueElement option in d.getOptions()) {
-				if(AssessPreconditions(option)) {
-					idOptionLabelPairs.Add(option.getId(), option.getOptionText());
+			if(d.getOptions() != null) {
+				foreach(DialogueElement option in d.getOptions()) {
+					if(AssessPreconditions(option)) {
+						idOptionLabelPairs.Add(option.getId(), option.getOptionText());
+					}
 				}
 			}
-			if(idOptionLabelPairs.Count == 0) idOptionLabelPairs = null;
 			RunPostconditions(d);
 			return new ConversationTransaction(d.getBody(), idOptionLabelPairs);
 		}
