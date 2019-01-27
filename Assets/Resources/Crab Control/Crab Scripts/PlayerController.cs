@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.DialogueEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -20,10 +21,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Movement();
+        if (DialogueController.Instance.ConvoDone)
+        {
+            Movement();
+        }
     }
-
-
 
     private void Movement()
     {

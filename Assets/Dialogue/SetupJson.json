@@ -1,0 +1,20 @@
+ {
+	"entrypoint": true,
+    "id": "Setup",
+	"pre": {
+      "global_flag_unset": ["HasCelebrityShell",],
+	  },
+    "body": [
+		"Mornin' Herm!",
+		"Just dropped off the kids to their golf lesson.",
+		"I was skeptical of Coach Shrimp, seeming as he can barely hold a club y'know?",
+		"But he's actually been a great teacher, the kids' golf skills have come on wonderfully!",
+		"I'm telling ya Herm, golf lessons may sound nice, but they're not cheap.",
+		"If only only there was a shell that could allow for my kids to continue golfing..."
+    ],
+    "options": [
+      "Clawrice Ranch",
+	  "Clawrice Business",
+      "Clawrice Goodbye"
+    ]
+  }
