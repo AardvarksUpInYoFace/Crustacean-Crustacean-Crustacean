@@ -31,7 +31,7 @@ Shader "Custom/WaveyShader" {
             }
  
             half4 frag(v2f i) : COLOR {
-                i.grabPos.x += sin((_Time.y + i.grabPos.y) * _Intensity)/80;
+                i.grabPos.x += sin((_Time.y + i.grabPos.y) * _Intensity)/160;
                 fixed4 color = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.grabPos));
                 return color;
             }
