@@ -14,11 +14,12 @@
       "Poshelle Chef",
       "Poshelle Art",
 	  "Poshelle Goodbye"
+	  ]
   },
     {
 	"id": "Poshelle Chef",
 	"pre": {
-      "global_flag_set": ["HasChefShell"],
+      "global_flag_set": ["HasChefShell"]
 	  },
 	"option_text": "Want to swap for my small restaurant?",
 	"body": [
@@ -33,7 +34,7 @@
  {
 	"id": "Poshelle Art",
 	"pre": {
-      "global_flag_set": ["HasArtShell"],
+      "global_flag_set": ["HasArtShell"]
 	  },
 	"option_text": "This shell looks pretty artsy..?",
 	"body": [
@@ -43,7 +44,8 @@
 	"post": {
 	  "unset_global_flags": ["HasArtShell"],
 	  "set_global_flags": ["HasCelebrityShell"]
-	}
+	  }
+	},
  {
 	"id": "Poshelle Goodbye",
 	"option_text": "Goodbye!",

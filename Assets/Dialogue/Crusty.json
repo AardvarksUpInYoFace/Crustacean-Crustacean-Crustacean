@@ -10,12 +10,13 @@
     ],
     "options": [
       "Crusty Starter",
-	  "Crusty Goodbye",
+	  "Crusty Goodbye"
+	  ]
   },
     {
 	"id": "Crusty Starter",
 	"pre": {
-      "global_flag_set": ["HasStarterShell"],
+      "global_flag_set": ["HasStarterShell"]
 	  },
 	"option_text": "You can use my place!",
 	"body": [
@@ -27,7 +28,6 @@
 	  "set_global_flags": ["HasBakerShell"]
 	}
   },
-   },
  {
 	"id": "Crusty Goodbye",
 	"option_text": "Goodbye!",

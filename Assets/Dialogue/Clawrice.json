@@ -19,7 +19,7 @@
     {
 	"id": "Clawrice Business",
 	"pre": {
-      "global_flag_set": ["HasBusinessShell"],
+      "global_flag_set": ["HasBusinessShell"]
 	  },
 	"option_text": "How about this office block?",
 	"body": [
@@ -31,13 +31,13 @@
 		],
 	"post": {
 			"unset_global_flags": ["HasBusinessShell"],
-		"set_global_flags": ["HasFamilyShell","RollCredits"],
+		"set_global_flags": ["HasFamilyShell","RollCredits"]
 	}
   },
   {
     "id": "Clawrice Ranch",
 	 "pre": {
-      "global_flag_set": ["HasRanchShell"],
+      "global_flag_set": ["HasRanchShell"]
 	  },
 	"option_text": "How about this nice big ranch?",
 	"body": ["Wow, that ranch looks perfect! Plenty of space for the kids to play golf whenever I want them to!",
@@ -47,7 +47,7 @@
 			],
 	"post": {
 				"unset_global_flags": ["HasRanchShell"],
-		"set_global_flags": ["HasFamilyShell","RollCredits"],
+		"set_global_flags": ["HasFamilyShell","RollCredits"]
 	}
   },
   {

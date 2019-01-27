@@ -11,11 +11,12 @@
     "options": [
       "Aristocrab Art",
 	  "Aristocrab Goodbye"
+	  ]
   },
     {
 	"id": "Aristocrab Art",
 	"pre": {
-      "global_flag_set": ["HasArtShell"],
+      "global_flag_set": ["HasArtShell"]
 	  },
 	"option_text": "Is this colourful enough for you?",
 	"body": [

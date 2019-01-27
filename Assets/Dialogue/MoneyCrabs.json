@@ -22,7 +22,7 @@
     {
 	"id": "Money Celebrity",
 	"pre": {
-      "global_flag_set": ["HasCelebrityShell"],
+      "global_flag_set": ["HasCelebrityShell"]
 	  },
 	"option_text": "Would this shell allow you a new start?",
 	"body": [
@@ -31,14 +31,14 @@
 		"I can't wait to start this new business opportunity!"
 		],
 	"post": {
-			"unset_global_flags": ["HasCelebrityShell",],
-	 "set_global_flags": ["RollCredits","HasMoneyShell"],
+			"unset_global_flags": ["HasCelebrityShell"],
+	 "set_global_flags": ["RollCredits","HasMoneyShell"]
 	}
   },
   {
     "id": "Money Business",
 	 "pre": {
-      "global_flag_set": ["HasBusinessShell"],
+      "global_flag_set": ["HasBusinessShell"]
 	  },
 	"option_text": "What do you think of this office shell?",
 	"body": [
@@ -47,7 +47,7 @@
 			],
 	"post": {
 		"unset_global_flags": ["HasBusinessShell"],
-		"set_global_flags": ["HasMoneyShell", "RollCredits"],
+		"set_global_flags": ["HasMoneyShell", "RollCredits"]
 	}
   },
   {

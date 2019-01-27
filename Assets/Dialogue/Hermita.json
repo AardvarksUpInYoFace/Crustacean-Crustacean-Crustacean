@@ -10,12 +10,13 @@
     ],
     "options": [
       "Hermita Starter",
-	  "Hermita Goodbye",
+	  "Hermita Goodbye"
+	  ]
   },
     {
 	"id": "Hermita Starter",
 	"pre": {
-      "global_flag_set": ["HasStarterShell"],
+      "global_flag_set": ["HasStarterShell"]
 	  },
 	"option_text": "Are you sure?",
 	"body": [
@@ -27,7 +28,6 @@
 	  "unset_global_flags": ["HasStarterShell"],
 	  "set_global_flags": ["HasGardenerShell"]
 	}
-  },
    },
  {
 	"id": "Hermita Goodbye",

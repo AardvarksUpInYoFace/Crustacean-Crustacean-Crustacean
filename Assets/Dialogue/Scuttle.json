@@ -20,7 +20,7 @@
     {
 	"id": "BackpackCrab Accept",
 	"pre": {
-      "global_flag_set": ["HasStarterShell"],
+      "global_flag_set": ["HasStarterShell"]
 	  },
 	"option_text": "Sounds good!",
 	"body": [
@@ -29,7 +29,7 @@
 		],
 	"post": {
 			"unset_global_flags": ["HasStarterShell"],
-		"set_global_flags": ["HasBackpackerShell"],
+		"set_global_flags": ["HasBackpackerShell"]
 	}
   },
   {

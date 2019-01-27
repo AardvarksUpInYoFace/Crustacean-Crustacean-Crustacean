@@ -12,11 +12,12 @@
       "Bisque Bakery",
 	  "Bisque Backpacker",
 	  "Bisque Goodbye"
+	  ]
   },
     {
 	"id": "Bisque Bakery",
 	"pre": {
-      "global_flag_set": ["HasBakerShell"],
+      "global_flag_set": ["HasBakerShell"]
 	  },
 	"option_text": "Interested in doing some baking?",
 	"body": [
@@ -27,12 +28,12 @@
 	  "unset_global_flags": ["HasBakerShell"],
 	  "set_global_flags": ["HasChefShell"]
 	}
-  },
+
    },
     {
 	"id": "Bisque Backpacker",
 	"pre": {
-      "global_flag_set": ["HasBackpackerShell"],
+      "global_flag_set": ["HasBackpackerShell"]
 	  },
 	"option_text": "Maybe sampling some foreign cuisines will bring the spark back?",
 	"body": [

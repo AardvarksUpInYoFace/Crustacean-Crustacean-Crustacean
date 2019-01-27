@@ -7,18 +7,19 @@
 		"It seems every day the market gets busier and more competitive.",
 		"Being so tired all the time was not what I imagined when I started this endeavour.",
 		"I used to love growing raw food and making it into something tasty...",
-		"But ever since Mr. Moneycrabs bought out the rest of the market, my customers have dried up."
+		"But ever since Mr. Moneycrabs bought out the rest of the market, my customers have dried up.",
 		"Every day is a struggle to keep the stall running."
     ],
     "options": [
       "Coral Gardener",
 	  "Coral Baker",
 	  "Coral Goodbye"
+	  ]
   },
     {
 	"id": "Coral Baker",
 	"pre": {
-      "global_flag_set": ["HasBakerShell"],
+      "global_flag_set": ["HasBakerShell"]
 	  },
 	"option_text": "Interested in doing some baking?",
 	"body": [
@@ -29,17 +30,17 @@
 	  "unset_global_flags": ["HasBakerShell"],
 	  "set_global_flags": ["HasMarketShell"]
 	}
-  },
+
    },
     {
 	"id": "Coral Gardener",
 	"pre": {
-      "global_flag_set": ["HasGardenerShell"],
+      "global_flag_set": ["HasGardenerShell"]
 	  },
 	"option_text": "Would some gardening help clear your head?",
 	"body": [
 		"Wow, Herm! This property is amazing!",
-		"A beautiful little place with quick access to an alloment. With this I could grow whatever I want!"
+		"A beautiful little place with quick access to an alloment. With this I could grow whatever I want!",
 		"Thank you!"
 		],
 	"post": {

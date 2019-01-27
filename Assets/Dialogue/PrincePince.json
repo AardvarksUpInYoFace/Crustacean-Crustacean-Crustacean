@@ -34,7 +34,7 @@
     {
 	"id": "Prince Celebrity",
 	"pre": {
-      "global_flag_set": ["HasCelebrityShell"],
+      "global_flag_set": ["HasCelebrityShell"]
 	  },
 	"option_text": "What do you think of this very terrible shell?",
 	"body": [
@@ -45,13 +45,13 @@
 		],
 	"post": {
 			"unset_global_flags": ["HasCelebrityShell"],
-	 "set_global_flags": ["RollCredits","HasPrinceShell"],
+	 "set_global_flags": ["RollCredits","HasPrinceShell"]
 	}
   },
   {
     "id": "Prince Aristocrab",
 	 "pre": {
-      "global_flag_set": ["HasAristocrabShell"],
+      "global_flag_set": ["HasAristocrabShell"]
 	  },
 	"option_text": "Does this suit your needs?",
 	"body": [
@@ -60,7 +60,7 @@
 			],
 	"post": {
 			"unset_global_flags": ["HasAristocrabShell"],
-		"set_global_flags": ["HasPrinceShell","RollCredits"],
+		"set_global_flags": ["HasPrinceShell","RollCredits"]
 	}
   },
   {

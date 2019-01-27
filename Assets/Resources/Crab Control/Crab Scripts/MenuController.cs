@@ -22,6 +22,9 @@ public class MenuController : MonoBehaviour
         MenuImages = GetComponentsInChildren<Image>().ToList();
         MenuTexts = GetComponentsInChildren<Text>().ToList();
 		GlobalFlags.instance.OnFlagChange += CheckEnding;
+
+		//THIS LINE DOESN'T BELONG HERE
+		GlobalFlags.instance.Set("HasStarterShell");
 	}
 
     // Update is called once per frame
@@ -58,6 +61,11 @@ public class MenuController : MonoBehaviour
 	}
 
 	private void ShowCard(Image img) {
+		StartCoroutine(DoShowCard(img));
+	}
+
+	private IEnumerator DoShowCard(Image img) {
+		yield return new WaitForSeconds(5.0f);
 		img.gameObject.SetActive(true);
 		img.color = Color.white;
 	}

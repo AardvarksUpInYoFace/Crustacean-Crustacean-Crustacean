@@ -18,7 +18,7 @@
     {
 	"id": "McClaw Market",
 	"pre": {
-      "global_flag_set": ["HasMarketShell"],
+      "global_flag_set": ["HasMarketShell"]
 	  },
 	"option_text": "Want to swap for my market stall shell?",
 	"body": [

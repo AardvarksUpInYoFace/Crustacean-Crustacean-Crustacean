@@ -12,11 +12,12 @@
       "Da Pinci Backpacker",
 	  "Da Pinci Astro",
 	  "Da Pinci Goodbye"
+	  ]
   },
     {
 	"id": "Da Pinci Backpacker",
 	"pre": {
-      "global_flag_set": ["HasBackpackerShell"],
+      "global_flag_set": ["HasBackpackerShell"]
 	  },
 	"option_text": "How about some world travel?",
 	"body": [
@@ -27,12 +28,11 @@
 	  "unset_global_flags": ["HasBackpackerShell"],
 	  "set_global_flags": ["HasArtShell"]
 	}
-  },
    },
     {
 	"id": "Da Pinci Astro",
 	"pre": {
-      "global_flag_set": ["HasAstroShell"],
+      "global_flag_set": ["HasAstroShell"]
 	  },
 	"option_text": "Would seeing the stars help your creative problems?",
 	"body": [

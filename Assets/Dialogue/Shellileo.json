@@ -21,7 +21,7 @@
     {
 	"id": "AstroCrab Accept",
 	"pre": {
-      "global_flag_set": ["HasStarterShell"],
+      "global_flag_set": ["HasStarterShell"]
 	  },
 	"option_text": "Sure thing..?",
 	"body": [
@@ -30,7 +30,7 @@
 		],
 	"post": {
 			"unset_global_flags": ["HasStarterShell"],
-		"set_global_flags": ["HasAstroShell"],
+		"set_global_flags": ["HasAstroShell"]
 	}
   },
   {
