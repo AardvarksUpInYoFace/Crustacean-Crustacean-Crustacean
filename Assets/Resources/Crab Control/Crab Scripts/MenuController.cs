@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour
     private List<Image> MenuImages = new List<Image>();
     private List<Text> MenuTexts = new List<Text>();
 
+    public Button StartButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class MenuController : MonoBehaviour
 
     public void GoToGame()
     {
+        StartButton.interactable = false;
         StartCoroutine(FadeWholeMenu(0, 1.3f, 1, 0));
     }
 

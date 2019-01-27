@@ -13,9 +13,6 @@ namespace Assets.Scripts.DialogueEngine
     {
         public static DialogueController Instance;
 
-        [SerializeField]
-        TextAsset json;
-
         public Text myText;
 
         public GameObject OptionButtonPrefab;
@@ -31,8 +28,15 @@ namespace Assets.Scripts.DialogueEngine
         private bool CanContinue = false;
         public bool ConvoDone = true;
 
-        public GameObject ContinueButton;
+        public GameObject ContinueButton, EndButton;
 
+        private List<GameObject> OptionButtons = new List<GameObject>();
+
+        private List<Image> PanelImages;
+        private List<Text> PanelTexts;
+
+        public GameObject CrabFriend;
+        public Text CrabNameText;
 
         private void Awake()
         {
@@ -40,7 +44,6 @@ namespace Assets.Scripts.DialogueEngine
             {
                 Destroy(gameObject);
             }
-
             else
             {
                 Instance = this;
@@ -49,15 +52,55 @@ namespace Assets.Scripts.DialogueEngine
 
         private void Start()
         {
+            PanelImages = GetComponentsInChildren<Image>().ToList();
+            PanelTexts = GetComponentsInChildren<Text>().ToList();
+        }
+
+        private void SwitchPanelStuff(bool On)
+        {
+            foreach (Image image in PanelImages)
+            {
+                image.enabled = On;
+            }
+
+            foreach (Text text in PanelTexts)
+            {
+                text.enabled = On;
+            }
+        }
+
+        public void StartDialogue(TextAsset json, GameObject Triggerer, string name)
+        {
+            CrabFriend = Triggerer;
+            CrabNameText.text = name;
+
+
             myConversation = new ConversationParser().Parse(json.text);
+
+            entryTrans = myConversation.EnterConversation();
+            StartConversation();
+
+            SwitchPanelStuff(true);
+        }
+
+        public void EndDialogue()
+        {
+            ConvoDone = true;
+            SwitchPanelStuff(false);
+            EndButton.SetActive(false);
         }
 
         public void StartConversation()
         {
+            foreach(GameObject option in OptionButtons)
+            {
+                Destroy(option);
+            }
+
+            OptionButtons.Clear();
+
             InConvo = true;
             ConvoDone = false;
-
-            entryTrans = myConversation.EnterConversation();
 
             Dialogues = entryTrans.conversationPages;
 
@@ -67,12 +110,10 @@ namespace Assets.Scripts.DialogueEngine
 
         public void NextConversation(string ID)
         {
-            Debug.Log(ID);
             entryTrans = myConversation.GetNext(ID);
             Dialogues = entryTrans.conversationPages;
 
             StartConversation();
-
         }
 
         private void GoToNextDialogue()
@@ -116,9 +157,11 @@ namespace Assets.Scripts.DialogueEngine
                                 var ListOVals = entryTrans.responses.Values.ToList();
                                 
                                 //if no options, end of dialogue
-                                if (ListOVals.Count< 1)
+                                if (ListOVals.Count < 1)
                                 {
-                                    ConvoDone = true;
+                                    //ConvoDone = true;
+                                    EndButton.SetActive(true);
+                                    //bring up the end button.
                                     return;
                                 }
 
@@ -135,6 +178,8 @@ namespace Assets.Scripts.DialogueEngine
                                         obj.GetComponent<RectTransform>().localPosition = new Vector3(-227, 200, 0);
                                         obj.GetComponent<RectTransform>().localPosition += new Vector3(i * 310, 0, 0);
                                         obj.GetComponent<DialogueOptionButton>().SetConvoID(entryTrans.responses.FirstOrDefault(x => x.Value == option).Key, option);
+
+                                        OptionButtons.Add(obj);
 
                                         i++;
                                     }
