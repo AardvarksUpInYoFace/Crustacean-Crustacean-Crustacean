@@ -230,11 +230,13 @@ namespace Crustacean.Dialogue {
 		}
 
 		private void Spit(JsonTextReader reader) {
+#if DEBUG_DIALOGUE_PARSER
 			if(reader.Value != null) {
 				Debug.Log(string.Concat("Token: ", reader.TokenType, " Value: ", reader.Value));
 			} else {
 				Debug.Log(string.Concat("Token: ", reader.TokenType));
 			}
+#endif
 		}
 
 		private class UnresolvedDialogueElement : DialogueElement {
